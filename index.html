@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ur-Latn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Roman Urdu Tafseer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital@0;1&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ivory: #FAF6ED;
+    --card: #F1EAD9;
+    --ink: #2E2A22;
+    --ink-soft: #5B5647;
+    --sage: #1C7A6E;
+    --olive: #0E4B45;
+    --brass: #B08D57;
+    --line: rgba(14,75,69,0.18);
+  }
+
+  *{ box-sizing: border-box; margin:0; padding:0; }
+
+  body{
+    background: var(--ivory);
+    color: var(--ink);
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+  }
+
+  .page{
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 56px 28px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  /* subtle geometric motif, behind hero */
+  .motif{
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 340px;
+    height: 340px;
+    opacity: 0.07;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .hero{
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding-top: 28px;
+  }
+
+  .eyebrow-mark{
+    display: inline-block;
+    width: 34px;
+    height: 34px;
+    margin-bottom: 22px;
+    color: var(--brass);
+  }
+
+  h1{
+    font-family: 'Amiri', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 2.5rem;
+    line-height: 1.25;
+    color: var(--olive);
+    letter-spacing: 0.2px;
+  }
+
+  .intro{
+    margin: 22px auto 0;
+    max-width: 34ch;
+    color: var(--ink-soft);
+    font-size: 1.02rem;
+    font-weight: 300;
+  }
+
+  .divider{
+    width: 56px;
+    height: 1px;
+    background: var(--line);
+    margin: 32px auto;
+  }
+
+  /* search */
+  .search-wrap{
+    position: relative;
+    z-index: 1;
+    margin: 0 auto 18px;
+  }
+
+  .search-box{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 13px 20px;
+  }
+
+  .search-box svg{
+    width: 17px;
+    height: 17px;
+    color: var(--ink-soft);
+    flex-shrink: 0;
+  }
+
+  .search-box input{
+    border: none;
+    background: transparent;
+    outline: none;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 0.95rem;
+    color: var(--ink);
+    width: 100%;
+  }
+
+  .search-box input::placeholder{
+    color: var(--ink-soft);
+    opacity: 0.7;
+  }
+
+  /* primary action */
+  .primary-action{
+    position: relative;
+    z-index: 1;
+    margin-top: 26px;
+  }
+
+  .btn-surah{
+    display: block;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    background: var(--olive);
+    color: var(--ivory);
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+    padding: 17px 24px;
+    border-radius: 16px;
+    transition: background 0.25s ease, transform 0.15s ease;
+  }
+
+  .btn-surah:active{
+    transform: scale(0.985);
+  }
+
+  @media (hover:hover){
+    .btn-surah:hover{ background: var(--sage); }
+  }
+
+  .btn-note{
+    text-align: center;
+    margin-top: 10px;
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+    opacity: 0.75;
+  }
+
+  footer{
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    margin-top: 56px;
+    font-size: 0.8rem;
+    color: var(--ink-soft);
+    opacity: 0.6;
+    font-style: italic;
+  }
+
+  footer span{
+    font-family: 'Amiri', serif;
+  }
+</style>
+</head>
+<body>
+
+  <div class="page">
+
+    <svg class="motif" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <g fill="none" stroke="#0E4B45" stroke-width="0.6">
+        <polygon points="100,10 190,55 190,145 100,190 10,145 10,55"/>
+        <polygon points="100,45 160,72 160,128 100,155 40,128 40,72"/>
+        <polygon points="100,80 130,90 130,110 100,120 70,110 70,90"/>
+        <line x1="100" y1="10" x2="100" y2="190"/>
+        <line x1="10" y1="55" x2="190" y2="145"/>
+        <line x1="10" y1="145" x2="190" y2="55"/>
+      </g>
+    </svg>
+
+    <div class="hero">
+      <svg class="eyebrow-mark" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M17 2 L30 10 L30 24 L17 32 L4 24 L4 10 Z" stroke="currentColor" stroke-width="1"/>
+        <circle cx="17" cy="17" r="5" stroke="currentColor" stroke-width="1"/>
+      </svg>
+
+      <h1>My Roman Urdu Tafseer</h1>
+
+      <p class="intro">
+        A quiet space to pause with each Surah — reading its Tafseer slowly,
+        in a language that feels like home.
+      </p>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="search-wrap">
+      <div class="search-box">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="1.6"/>
+          <line x1="16.5" y1="16.5" x2="21" y2="21" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+        <input type="text" placeholder="Search Surah by name or number">
+      </div>
+    </div>
+
+    <div class="primary-action">
+      <a href="surahs.html" class="btn-surah">View Surah-wise Tafseer</a>
+      <p class="btn-note">114 Surahs — the ones ready can be read now</p>
+    </div>
+
+    <footer>
+      <span>"And We have certainly made the Qur'an easy for remembrance."</span>
+    </footer>
+
+  </div>
+
+</body>
+</html>
