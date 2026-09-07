@@ -644,22 +644,6 @@
       </div>
 
       <div style="height:36px"></div>
-
-      <div class="admin-shell">
-        <h3>Add a Surah's Notes (Private)</h3>
-        <p>Paste the Google Drive share link for a Surah below, and this will generate the exact line to paste into the <code>SURAHS</code> list in your site file on GitHub. It doesn't publish anything by itself — copy the line, replace the matching entry in the file, and save.</p>
-        <div class="admin-field">
-          <label for="adminSurah">Surah</label>
-          <select id="adminSurah"></select>
-        </div>
-        <div class="admin-field">
-          <label for="adminLink">Google Drive PDF link</label>
-          <input id="adminLink" type="url" placeholder="https://drive.google.com/file/d/....">
-        </div>
-        <button class="btn solid" id="adminGenerate" type="button">Generate line to paste</button>
-        <div class="admin-output" id="adminOutput"></div>
-        <button class="btn admin-copy" id="adminCopy" type="button" style="display:none;">Copy line</button>
-      </div>
     </div>
   </section>
 
@@ -947,38 +931,6 @@
       mobileMenu.classList.remove('open');
       menuBtn.classList.remove('open');
       menuBtn.setAttribute('aria-expanded', 'false');
-    });
-  });
-
-  // ---------------------------------------------------------------
-  // Admin: code-line generator
-  // ---------------------------------------------------------------
-  const adminSelect = document.getElementById('adminSurah');
-  SURAHS.forEach(s => {
-    const opt = document.createElement('option');
-    opt.value = s.n;
-    opt.textContent = `${pad(s.n)} — ${s.en}`;
-    adminSelect.appendChild(opt);
-  });
-
-  const adminOutput = document.getElementById('adminOutput');
-  const adminCopyBtn = document.getElementById('adminCopy');
-
-  document.getElementById('adminGenerate').addEventListener('click', () => {
-    const n = parseInt(adminSelect.value, 10);
-    const link = document.getElementById('adminLink').value.trim();
-    const surah = SURAHS.find(s => s.n === n);
-    if(!surah) return;
-    const line = `{n:${surah.n},en:"${surah.en}",ar:"${surah.ar}",pdf:"${link}"},`;
-    adminOutput.textContent = line;
-    adminOutput.classList.add('show');
-    adminCopyBtn.style.display = 'inline-flex';
-  });
-
-  adminCopyBtn.addEventListener('click', () => {
-    navigator.clipboard.writeText(adminOutput.textContent).then(() => {
-      adminCopyBtn.textContent = 'Copied';
-      setTimeout(() => { adminCopyBtn.textContent = 'Copy line'; }, 1500);
     });
   });
 </script>
